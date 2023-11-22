@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "api-translate"
+version = "0.1.0"
+description = ""
+authors = ["Ivaschenko Nikita <ivashchenkonikal@gmail.com>"]
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+googletrans = "4.0.0rc1"
+translate = "^3.6.1"
+fastapi = "^0.104.1"
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+translators = "^5.8.7"
+pandas = "^2.1.2"
+fasttext = {git = "https://github.com/cfculhane/fastText.git"}
+pycld2 = {git = "https://github.com/aboSamoor/pycld2.git"}
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.3"
+
+[tool.poetry.group.analysis.dependencies]
+jupyter = "^1.0.0"
+lab = "^8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+fast_api_start = "api_translate.fastAPI_main:start"
